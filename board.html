@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HustleStack Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Dashboard Header -->
+        <header class="dashboard-header">
+            <h1>HustleStack Dashboard</h1>
+            <div class="balance-section">
+                <h2>Balance Overview</h2>
+                <p>Total Income: $<span id="totalIncome">0.00</span></p>
+                <p>Total Expenses: $<span id="totalExpenses">0.00</span></p>
+            </div>
+        </header>
+
+        <!-- Action and Gig Section -->
+        <div class="action-gig-section">
+            <div class="add-hustle">
+                <button id="addHustleBtn">+ Add Hustle/Gig</button>
+            </div>
+            <div class="set-budget">
+                <input type="number" id="monthlyBudget" placeholder="Set Monthly Budget" />
+                <button id="setBudgetBtn">Set Budget</button>
+            </div>
+        </div>
+
+        <!-- Gig List Section -->
+        <div class="gig-list-section">
+            <h3>Your Gigs</h3>
+            <ul id="gigList"></ul>
+        </div>
+
+        <!-- Graph Section -->
+        <div class="chart-section">
+            <canvas id="incomeChart" width="400" height="200"></canvas>
+            <canvas id="expenseChart" width="400" height="200"></canvas>
+        </div>
+
+        <!-- Progress Section -->
+        <div class="goal-section">
+            <h3>Goal Progress</h3>
+            <div id="gigProgressBars"></div>
+        </div>
+
+        <!-- Toast Notification -->
+        <div id="toast" class="toast"></div>
+    </div>
+
+    <button class="fab" id="fabAddHustle">+</button>
+
+    <script src="app.js"></script>
+</body>
+</html>

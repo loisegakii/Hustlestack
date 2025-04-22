@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HustleStack Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>HustleStack Dashboard</h1>
+            <div class="balance-section">
+                <div class="balance-card">
+                    <h3>Total Income</h3>
+                    <h4>$<span id="totalIncome">0.00</span></h4>
+                </div>
+                <div class="balance-card">
+                    <h3>Total Expenses</h3>
+                    <h4>$<span id="totalExpenses">0.00</span></h4>
+                </div>
+            </div>
+        </header>
+
+        <div class="action-section">
+            <div class="add-hustle-card">
+                <h3>Add a New Hustle/Gig</h3>
+                <input type="text" id="gigName" placeholder="Enter Gig Name" />
+                <input type="number" id="gigIncome" placeholder="Gig Income" />
+                <input type="number" id="gigGoal" placeholder="Gig Goal" />
+                <button id="addGigBtn">Add Hustle</button>
+            </div>
+            
+            <div class="set-budget-card">
+                <h3>Set Monthly Budget</h3>
+                <input type="number" id="monthlyBudgetAmount" placeholder="Set your budget" />
+                <button id="setBudgetBtn">Set Budget</button>
+            </div>
+        </div>
+
+        <div class="transaction-section">
+            <h3>Transaction History</h3>
+            <ul id="transactionList"></ul>
+        </div>
+
+        <div class="gig-section">
+            <h3>Your Gigs</h3>
+            <ul id="gigList"></ul>
+        </div>
+
+        <div class="summary-section">
+            <h4>Overall Income: $<span id="overallIncome">0.00</span></h4>
+            <h4>Overall Expenses: $<span id="overallExpenses">0.00</span></h4>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
