@@ -1,60 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HustleStack Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HustleStack Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="dashboard-container">
-        <!-- Dashboard Header -->
-        <header class="dashboard-header">
-            <h1>HustleStack Dashboard</h1>
-            <div class="balance-section">
-                <h2>Balance Overview</h2>
-                <p>Total Income: $<span id="totalIncome">0.00</span></p>
-                <p>Total Expenses: $<span id="totalExpenses">0.00</span></p>
-            </div>
-        </header>
+   <div class="dashboard-container">
+    <header class="dashboard-header">
+      <h1>💼 HustleStack Dashboard</h1>
+      <div class="balance-section">
+        <h2>Balance Overview</h2>
+        <p>Total Income: $<span id="totalIncome">0.00</span></p>
+        <p>Total Expenses: $<span id="totalExpenses">0.00</span></p>
+        <p>Total Savings (10%): $<span id="totalSavings">0.00</span></p>
+        <p><strong>Available Balance: $<span id="availableBalance">0.00</span></strong></p>
+      </div>
+    </header>
 
-        <!-- Action and Gig Section -->
-        <div class="action-gig-section">
-            <div class="add-hustle">
-                <button id="addHustleBtn">+ Add Hustle/Gig</button>
-            </div>
-            <div class="set-budget">
-                <input type="number" id="monthlyBudget" placeholder="Set Monthly Budget" />
-                <button id="setBudgetBtn">Set Budget</button>
-            </div>
-        </div>
-
-        <!-- Gig List Section -->
-        <div class="gig-list-section">
-            <h3>Your Gigs</h3>
-            <ul id="gigList"></ul>
-        </div>
-
-        <!-- Graph Section -->
-        <div class="chart-section">
-            <canvas id="incomeChart" width="400" height="200"></canvas>
-            <canvas id="expenseChart" width="400" height="200"></canvas>
-        </div>
-
-        <!-- Progress Section -->
-        <div class="goal-section">
-            <h3>Goal Progress</h3>
-            <div id="gigProgressBars"></div>
-        </div>
-
-        <!-- Toast Notification -->
-        <div id="toast" class="toast"></div>
+<!-- Gig section -->
+    <div class="action-gig-section">
+      <button id="addHustleBtn">➕ Add Gig</button>
+      <button id="addExpenseBtn">➖ Add Expense</button>
     </div>
 
-    <button class="fab" id="fabAddHustle">+</button>
+    <div class="gig-list-section">
+      <h3>📌 Recent Gigs</h3>
+      <ul id="gigList"></ul>
+    </div>
 
-    <script src="app.js"></script>
+    <div class="expense-list-section">
+      <h3>💸 Recent Expenses</h3>
+      <ul id="expenseList"></ul>
+    </div>
+            <!-- Invoice Section -->
+        <div class="invoice-section">
+             <button id="generateInvoiceBtn">Generate Report</button>
+            <div id="invoiceDetails" style="display: none;">
+                <h4>Report Summary</h4>
+                <!-- <table id="invoiceTable">
+                    <thead>
+                        <tr>
+                            <th>Title of Gig</th>
+                            <th>Pages</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="invoiceTableBody"></tbody>
+                </table> -->
+                <p><strong>Total Income:</strong> $<span id="invoiceTotalIncome">0.00</span></p>
+                <p><strong>Total Expenses:</strong> $<span id="invoiceTotalExpenses">0.00</span></p>
+                <p><strong>Net Income:</strong> $<span id="invoiceNetIncome">0.00</span></p>
+                <button id="printPdfBtn">Download PDF</button>
+            </div>
+        </div>
+
+    <div class="chart-section">
+      <h3>📊 Financial Overview</h3>
+      <canvas id="financeChart"></canvas>
+    </div>
+
+    <div id="toast" class="toast"></div>
+  </div>
+
+
+  <script src="app.js"></script>
 </body>
 </html>
